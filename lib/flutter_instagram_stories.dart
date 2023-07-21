@@ -369,12 +369,12 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                                 child: CachedNetworkImage(
                                   imageUrl: story.previewImage!,
                                   width: widget.iconWidth,
-                                  height: widget.iconHeight,
+                                  height: widget.iconWidth,
                                   fit: BoxFit.cover,
                                   placeholder: (context, url) =>
                                       StoriesListSkeletonAlone(
                                     width: widget.iconWidth!,
-                                    height: widget.iconHeight!,
+                                    height: widget.iconWidth!,
                                   ),
                                   errorWidget: (context, url, error) =>
                                       Icon(Icons.error),
@@ -382,7 +382,6 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                               ),
                               Container(
                                 width: widget.iconWidth,
-                                height: widget.iconHeight,
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -452,12 +451,12 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                             child: CachedNetworkImage(
                               imageUrl: story.previewImage!,
                               width: widget.iconWidth,
-                              height: widget.iconHeight,
+                              height: widget.iconWidth,
                               fit: BoxFit.cover,
                               placeholder: (context, url) =>
                                   StoriesListSkeletonAlone(
                                 width: widget.iconWidth!,
-                                height: widget.iconHeight!,
+                                height: widget.iconWidth!,
                               ),
                               errorWidget: (context, url, error) =>
                                   Icon(Icons.error),
@@ -465,7 +464,6 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                           ),
                           Container(
                             width: widget.iconWidth,
-                            height: widget.iconHeight,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.end,
                               crossAxisAlignment: CrossAxisAlignment.start,
