@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:marqueer/marqueer.dart';
 
 import 'components//stories_list_skeleton.dart';
 import 'grouped_stories_view.dart';
@@ -382,6 +383,7 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                               ),
                               Container(
                                 width: widget.iconWidth,
+                                height: widget.iconHeight! - widget.iconWidth!,
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -389,12 +391,14 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                                   children: <Widget>[
                                     Padding(
                                       padding: widget.textInIconPadding,
-                                      child: Text(
+                                      child: Marqueer(
+                                          child: Text(
                                         story.previewTitle![
                                             widget.languageCode]!,
+                                        maxLines: 1,
                                         style: widget.iconTextStyle,
                                         textAlign: TextAlign.center,
-                                      ),
+                                      )),
                                     ),
                                   ],
                                 ),
@@ -464,6 +468,7 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                           ),
                           Container(
                             width: widget.iconWidth,
+                            height: widget.iconHeight! - widget.iconWidth!,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.end,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -471,11 +476,13 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                               children: <Widget>[
                                 Padding(
                                   padding: widget.textInIconPadding,
-                                  child: Text(
+                                  child: Marqueer(
+                                      child: Text(
                                     story.previewTitle![widget.languageCode]!,
                                     style: widget.iconTextStyle,
+                                    maxLines: 1,
                                     textAlign: TextAlign.center,
-                                  ),
+                                  )),
                                 ),
                               ],
                             ),
