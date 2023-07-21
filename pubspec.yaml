@@ -1,7 +1,7 @@
 name: flutter_stories
 homepage: https://github.com/amitjha329/flutter_stories
 description: Display stories (videos and images) like Whatsapp & Instagram.
-version: 1.0.4+3
+version: 1.0.5+4
 
 environment:
   sdk: '>=2.18.0 <3.0.0'
