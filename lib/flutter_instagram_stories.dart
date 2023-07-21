@@ -20,6 +20,7 @@ class FlutterInstagramStories extends StatefulWidget {
   final bool lastIconHighlight;
   final Color lastIconHighlightColor;
   final Radius lastIconHighlightRadius;
+  final Axis scrollDirection;
 
   /// preview images settings
   final double? iconWidth;
@@ -79,6 +80,7 @@ class FlutterInstagramStories extends StatefulWidget {
         horizontal: 24,
         vertical: 8,
       ),
+      this.scrollDirection = Axis.horizontal,
       this.imageStoryDuration = 5,
       this.backgroundColorBetweenStories = Colors.black,
       this.closeButtonIcon,
@@ -125,7 +127,7 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
             return ListView.builder(
-              scrollDirection: Axis.horizontal,
+              scrollDirection: widget.scrollDirection,
               primary: false,
               itemCount: 3,
               itemBuilder: (BuildContext context, int index) {
@@ -163,7 +165,7 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
           _buildFuture(res);
 
           return ListView.builder(
-            scrollDirection: Axis.horizontal,
+            scrollDirection: widget.scrollDirection,
             primary: false,
             itemCount: stories.length,
             itemBuilder: (BuildContext context, int index) {
