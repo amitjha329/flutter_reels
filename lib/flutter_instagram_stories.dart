@@ -146,7 +146,9 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                             borderRadius: widget.iconImageBorderRadius,
                             child: StoriesListSkeletonAlone(
                               width: widget.iconWidth!,
-                              height: widget.iconHeight!,
+                              height: widget.titleInsideContainer
+                                  ? widget.iconWidth!
+                                  : widget.iconHeight!,
                             ),
                           ),
                         ],
@@ -384,24 +386,18 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                               Container(
                                 width: widget.iconWidth,
                                 height: widget.iconHeight! - widget.iconWidth!,
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: <Widget>[
-                                    Padding(
-                                      padding: widget.textInIconPadding,
-                                      child: Marqueer(
-                                          child: Text(
-                                        story.previewTitle![
-                                            widget.languageCode]!,
-                                        maxLines: 1,
-                                        style: widget.iconTextStyle,
-                                        textAlign: TextAlign.center,
-                                      )),
-                                    ),
-                                  ],
-                                ),
+                                padding: widget.textInIconPadding,
+                                child: Marqueer(
+                                    separatorBuilder: (context, index) =>
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                    child: Text(
+                                      story.previewTitle![widget.languageCode]!,
+                                      maxLines: 1,
+                                      style: widget.iconTextStyle,
+                                      textAlign: TextAlign.center,
+                                    )),
                               ),
                             ]),
                           ),
@@ -469,23 +465,17 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                           Container(
                             width: widget.iconWidth,
                             height: widget.iconHeight! - widget.iconWidth!,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisSize: MainAxisSize.max,
-                              children: <Widget>[
-                                Padding(
-                                  padding: widget.textInIconPadding,
-                                  child: Marqueer(
-                                      child: Text(
-                                    story.previewTitle![widget.languageCode]!,
-                                    style: widget.iconTextStyle,
-                                    maxLines: 1,
-                                    textAlign: TextAlign.center,
-                                  )),
-                                ),
-                              ],
-                            ),
+                            padding: widget.textInIconPadding,
+                            child: Marqueer(
+                                separatorBuilder: (context, index) => SizedBox(
+                                      width: 20,
+                                    ),
+                                child: Text(
+                                  story.previewTitle![widget.languageCode]!,
+                                  style: widget.iconTextStyle,
+                                  maxLines: 1,
+                                  textAlign: TextAlign.center,
+                                )),
                           ),
                         ]),
                       ),
