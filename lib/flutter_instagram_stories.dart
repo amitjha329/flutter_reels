@@ -188,7 +188,7 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                           decoration: widget.iconBoxDecoration,
                           width: widget.iconWidth,
                           height: widget.iconHeight,
-                          child: Stack(children: <Widget>[
+                          child: Column(children: <Widget>[
                             ClipRRect(
                               borderRadius: widget.iconImageBorderRadius,
                               child: CachedNetworkImage(
@@ -218,7 +218,7 @@ class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
                                     child: Text(
                                       story.previewTitle![widget.languageCode]!,
                                       style: widget.iconTextStyle,
-                                      textAlign: TextAlign.left,
+                                      textAlign: TextAlign.center,
                                     ),
                                   ),
                                 ],
