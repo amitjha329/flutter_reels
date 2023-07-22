@@ -12,7 +12,7 @@ import 'models/stories_list_with_pressed.dart';
 
 export 'grouped_stories_view.dart';
 
-class FlutterInstagramStories extends StatefulWidget {
+class FlutterReels extends StatefulWidget {
   /// the name of the collection in Firestore, more info here https://github.com/awaik/flutter_instagram_stories
   final String collectionDbName;
   final String languageCode;
@@ -58,7 +58,7 @@ class FlutterInstagramStories extends StatefulWidget {
   final bool repeat;
   final bool inline;
 
-  FlutterInstagramStories(
+  FlutterReels(
       {required this.collectionDbName,
       this.lastIconHighlight = false,
       this.lastIconHighlightColor = Colors.deepOrange,
@@ -96,11 +96,10 @@ class FlutterInstagramStories extends StatefulWidget {
       this.languageCode = 'en'});
 
   @override
-  _FlutterInstagramStoriesState createState() =>
-      _FlutterInstagramStoriesState();
+  _FlutterReelsState createState() => _FlutterReelsState();
 }
 
-class _FlutterInstagramStoriesState extends State<FlutterInstagramStories> {
+class _FlutterReelsState extends State<FlutterReels> {
   late StoriesData _storiesData;
   final _firestore = FirebaseFirestore.instance;
   bool _backStateAdditional = false;

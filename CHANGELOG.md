@@ -1,3 +1,33 @@
+## 1.0.9+8
+
+* CHanged Package Name
+## 1.0.9+8
+
+* Bug Due Marquee Implementation Resolved
+
+## 1.0.8+7
+
+* Icon Text Marquee feature implemented.
+
+## 1.0.7+6
+
+* Circular Icon for Story list and Icon Text Below Icon.
+
+## 1.0.6+5
+
+* Dependencies Updated
+* Attribute for icon text inside/outside container.
+
+## 1.0.5+4
+
+* Dependencies Updated
+
+## 1.0.4+3
+
+* Forked From Main Project
+* Dependencies Updated
+* Fixed story_view.dart Null Error.
+* Added scrollDirection Attribute to Widget
 ## 1.0.3+1
 
 * Updated dependencies
