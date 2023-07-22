@@ -1,6 +1,9 @@
 ## 1.0.9+8
 
-* CHanged Package Name
+* Dependencies Updated
+## 1.0.9+8
+
+* Changed Package Name
 ## 1.0.9+8
 
 * Bug Due Marquee Implementation Resolved
